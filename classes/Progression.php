@@ -6,14 +6,14 @@
 abstract class Progression
 {
     /** @var array */
-    protected $number = array();
+    protected $sequence = array();
 
     /** @var string функция которая будет использоваться для проверки */
     protected $function;
 
-    public function __construct()
+    public function __construct($sequence)
     {
-
+        $this->sequence = $sequence;
     }
 
     /**

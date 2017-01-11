@@ -26,10 +26,13 @@ class App
             'GeometricProgression',
         );
 
+        /** @var array $sequence */
+        $sequence = explode(',', $_SERVER['argv'][1]);
+
         foreach ($classes as $className) { /** @var string $progression */
 
             /** @var ArithmeticProgression|GeometricProgression $progression */
-            $progression = new $className();
+            $progression = new $className($sequence);
 
             if ($progression->isValid()) {
                 echo "Последовательность является прогрессией\n";
