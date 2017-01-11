@@ -32,12 +32,12 @@ class App
             $progression = new $className();
 
             if ($progression->isValid()) {
-                echo "Последовательность является прогрессией";
+                echo "Последовательность является прогрессией\n";
                 return;
             }
         }
 
-        echo "Последовательность не является прогрессией";
+        echo "Последовательность не является прогрессией\n";
     }
 
     private function __construct()
