@@ -29,20 +29,27 @@ class App
         /** @var array $sequence */
         $sequence = explode(',', $_SERVER['argv'][1]);
 
+        /** @var string $msg */
+        $msg = "Последовательность не является прогрессией";
+
         foreach ($classes as $className) { /** @var string $progression */
 
             /** @var ArithmeticProgression|GeometricProgression $progression */
             $progression = new $className($sequence);
 
             if ($progression->isValid()) {
-                echo "Последовательность является прогрессией\n";
-                return;
+
+                $msg = "Последовательность является прогрессией";
+                break;
             }
         }
 
-        echo "Последовательность не является прогрессией\n";
+        echo $msg . "\n";
     }
 
+    /**
+     * App constructor.
+     */
     private function __construct()
     {
     }

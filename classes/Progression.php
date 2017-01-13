@@ -8,9 +8,6 @@ abstract class Progression
     /** @var array */
     protected $sequence = array();
 
-    /** @var string функция которая будет использоваться для проверки */
-    protected $function;
-
     public function __construct($sequence)
     {
         $this->sequence = $sequence;
@@ -23,6 +20,17 @@ abstract class Progression
      */
     public function isValid()
     {
-        return true;
+        while ($current = current($this->sequence)) {
+
+            if (!$next = next($this->sequence)) { // дошли до конца без ошибок
+                return true;
+            }
+
+            if (!$this->validPair($current, $next)) { // прогрессия не валидна
+                return false;
+            }
+        }
     }
+
+    protected abstract function validPair($current, $next);
 }
