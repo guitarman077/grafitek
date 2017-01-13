@@ -3,7 +3,7 @@
 /**
  * Class App
  */
-class App
+abstract class App
 {
     public static function init()
     {
@@ -45,12 +45,5 @@ class App
         }
 
         echo $msg . "\n";
-    }
-
-    /**
-     * App constructor.
-     */
-    private function __construct()
-    {
     }
 }

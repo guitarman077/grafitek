@@ -20,6 +20,10 @@ abstract class Progression
      */
     public function isValid()
     {
+        if (count($this->sequence) === 1) {
+            return false;
+        }
+
         while ($current = current($this->sequence)) {
 
             if (!$next = next($this->sequence)) { // дошли до конца без ошибок
