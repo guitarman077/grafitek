@@ -32,7 +32,7 @@ abstract class App
         /** @var string $msg */
         $msg = "Последовательность не является прогрессией";
 
-        foreach ($classes as $className) { /** @var string $progression */
+        foreach ($classes as $className) { /** @var string $className */
 
             /** @var ArithmeticProgression|GeometricProgression $progression */
             $progression = new $className($sequence);
