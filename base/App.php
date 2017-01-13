@@ -8,7 +8,7 @@ abstract class App
     public static function init()
     {
         $files = array(
-            'classes/Progression.php',
+            'classes/abstract/Progression.php',
             'classes/ArithmeticProgression.php',
             'classes/GeometricProgression.php',
         );
