@@ -8,6 +8,11 @@ abstract class Progression
     /** @var array */
     protected $sequence = array();
 
+    /**
+     * Progression constructor.
+     *
+     * @param $sequence
+     */
     public function __construct($sequence)
     {
         $this->sequence = $sequence;
@@ -26,7 +31,9 @@ abstract class Progression
 
         while ($current = current($this->sequence)) {
 
-            if (!$next = next($this->sequence)) { // дошли до конца без ошибок
+            $next = next($this->sequence);
+
+            if ($next === false) { // дошли до конца без ошибок
                 return true;
             }
 
@@ -36,5 +43,11 @@ abstract class Progression
         }
     }
 
+    /**
+     * @param $current
+     * @param $next
+     *
+     * @return mixed
+     */
     protected abstract function validPair($current, $next);
 }
